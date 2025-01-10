@@ -14,3 +14,18 @@ class Person(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+MONTHS = models.IntegerChoices('Miesiace', 'Styczeń Luty Marzec Kwiecień Maj Czerwiec Lipiec Sierpień Wrzesień Październik Listopad Grudzień')
+
+SHIRT_SIZES = (
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+    )
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=60)
+    country = models.CharField(max_length=2)
+
+    def __str__(self):
+        return f"{self.name}"
